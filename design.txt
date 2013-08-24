@@ -1,0 +1,23 @@
+I was trying to think of a game. Then I had to go. While I was in the bathroom I thought what if I was able to pee for exactly 10 seconds!
+
+Title: Hold it
+
+pick drinks: water / soda / beer / coffee
+
+pick how much time to hold it.
+
+If you don't die, see how long you last.
+
+maybe get art from: OpenGameArt.org
+
+Game Text:
+You're running late to the local radio stations pee holding contest. Luckily they're only a 10 second run away. Pick up just enough drinks along the way so that you'll pee for exactly 10 seconds.
+
+Scene Progression:
+1. Run along the street. Nothing in the middle of the street. You can move to the right or left to pick up power-up cubes that are water/soda/beer/coffee.
+2. Come to a radio station in the middle of the street.
+?(2.5 see other contestants)?
+3. Choose how long you can hold it.
+4. Enter the "microphoned toilet" and watch the door and a timer as you listen to urination audio
+ or
+Show an ambulence and as it pulls away show "You drank too much to hold it that long"
