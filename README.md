@@ -1,5 +1,5 @@
-Wee Hold
-========
+Tinkle Time
+===========
 A LudumDare 27 theme of "10 seconds"
 
 When it happened

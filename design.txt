@@ -1,6 +1,8 @@
+keynote inspiration: escape out ld21
+
 I was trying to think of a game. Then I had to go. While I was in the bathroom I thought what if I was able to pee for exactly 10 seconds!
 
-Title: Hold it
+Title: Tinkle Time
 
 pick drinks: water / soda / beer / coffee
 
@@ -9,6 +11,14 @@ pick how much time to hold it.
 If you don't die, see how long you last.
 
 maybe get art from: OpenGameArt.org
+Asset source:
+Road.png - http://opengameart.org/content/roughworn-road
+Beer.png - http://openclipart.org/detail/1021/foamy-mug-of-beer-by-johnny_automatic
+Coffee.png - http://openclipart.org/detail/155473/cup-of-coffee-by-gr8dan
+Soda.png - http://openclipart.org/detail/9150/fast-food-drinks-soda-can-by-gerald_g
+WaterBottle.png - http://openclipart.org/detail/168612/sodis-water-disinfection-by-jhnri4
+House - http://openclipart.org/detail/545/small-house-by-gerald_g
+Grass - http://opengameart.org/content/grass-0
 
 Game Text:
 You're running late to the local radio stations pee holding contest. Luckily they're only a 10 second run away. Pick up just enough drinks along the way so that you'll pee for exactly 10 seconds.

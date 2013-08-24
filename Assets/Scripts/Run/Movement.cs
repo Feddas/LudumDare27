@@ -45,6 +45,23 @@ public class Movement : MonoBehaviour
 		}
 	}
 	
+	int bladderAmmo = 0;
+	private void OnCollisionEnter(Collision hitInfo)
+	{
+		if (hitInfo.gameObject.tag == "Building")
+		{
+			Debug.Log(hitInfo.gameObject.tag);
+			Time.timeScale = 0;
+		}
+		else if (hitInfo.gameObject.tag == "Drink")
+		{
+			Drink drank = hitInfo.gameObject.GetComponent<PowerUp>().DrinkType;
+			bladderAmmo += (int)drank;
+			Destroy(hitInfo.gameObject);
+			//Debug.Log("drank " + drank.ToString() + ". now at " + bladderAmmo);
+		}
+	}
+	
 	public static void UpdatePostionX(Transform trans, float newX)
 	{
 		Vector3 newVector = new Vector3(newX, trans.position.y, trans.position.z);
