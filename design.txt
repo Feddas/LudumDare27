@@ -38,6 +38,12 @@ Scene Progression:
  or
 Show an ambulence and as it pulls away show "You drank too much to hold it that long"
 
+Win:
+Water 7pts, Beer 8pts, Coffee 9pts, Soda 10pts.
+For .5hr need 63 - 69 points.
+For 1hr need 56 - 63 points to win.
+For 1.5hr need 50 - 56 points to win.
+
 resources:
 shadows: http://youtu.be/994_6GZo3hs
 collision: file:///C:/Apps/MediaCreate/Unity/Editor/Data/Documentation/Documentation/Components/class-BoxCollider.html

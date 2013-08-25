@@ -14,8 +14,8 @@ public class PlaceDrinks : MonoBehaviour
 	public GameObject nguiStationWait;
 	public GameObject DrinkPrefab;
 	public GameObject Player;
+	public UILabel WaitChoice;
 	public UILabel Timer;
-	//public IList<GameObject> drinks = new List<GameObject>();
 	
 	void Start()
 	{
@@ -53,46 +53,53 @@ public class PlaceDrinks : MonoBehaviour
 			drinkPos.x = UnityEngine.Random.Range(-1, 2) * 10;
 			DrinkPrefab.transform.position = drinkPos;
 			var drink = Instantiate(DrinkPrefab) as GameObject;
-			//drinks.Add(drink);
 		}
 	}
 	
-//	private void removeAllDrinks()
-//	{
-//		if (drinks == null || drinks.Count < 1)
-//		{
-//			drinks = new List<GameObject>();
-//			return;
-//		}
-//		
-//		foreach (var drink in drinks)
-//		{
-//			if (drink != null)
-//				Destroy(drink);
-//		}
-//		drinks = new List<GameObject>();
-//	}
-//	
-//	void reset()
-//	{
-//		Player.transform.position = new Vector3(0f, 0.6f, 0f);
-//		removeAllDrinks();
-//		setupDrinks();
-//		NGUITools.SetActive(nguiStationArrival, false);
-//		Time.timeScale = 1;
-//	}
-	
 	private void TryATinkle(int minutesWaiting)
+	{	
+		switch (getGameResult(minutesWaiting, Globals.BladderAmmo))
+		{
+		case GameResult.Ambulance:
+			Debug.Log("Ambulance");
+			Application.LoadLevel(1);
+			break;
+		case GameResult.TinkleShort:
+			Debug.Log("TinkleShort");
+			Application.LoadLevel(2);
+			break;
+		case GameResult.Win:
+			Debug.Log("Win");
+			Application.LoadLevel(3);
+			break;
+		default:
+			break;
+		}
+	}
+	
+	private GameResult getGameResult(int minutesWaiting, int bladderAmmo)
 	{
-		float theValue = Globals.BladderAmmo * (minutesWaiting / 60);
-		Debug.Log("result: " + theValue + " BladderAmmo:" + Globals.BladderAmmo);
-		
-		//if (theValue > 80) //ambulance
-		//Application.LoadLevel(1);
-		
-		//if (theValue < 58) //fail audio
-		
-		
+		switch (minutesWaiting)
+		{
+		case 30:
+			return getWaitTypeResult(bladderAmmo, 63, 69);
+		case 60:
+			return getWaitTypeResult(bladderAmmo, 56, 63);
+		case 90:
+			return getWaitTypeResult(bladderAmmo, 50, 56);
+		default:
+			return GameResult.Unknown;
+		}
+	}
+	
+	private GameResult getWaitTypeResult(int bladderAmmo, int minPoints, int maxPoints)
+	{
+		if (bladderAmmo < minPoints)
+			return GameResult.TinkleShort;
+		else if (bladderAmmo > maxPoints)
+			return GameResult.Ambulance;
+		else
+			return GameResult.Win;
 	}
 	
 	#region Button Events
@@ -110,9 +117,11 @@ public class PlaceDrinks : MonoBehaviour
 	
 	public void OnClickGoIn()
 	{
+		WaitChoice.text = string.Format(
+			"You'd say you drank ohhh... {0}% of what you could hold. Once inside, you're asked, \"Given how much you've drank. How long do you need to let it go through your system so you pee for exactly 10 seconds?\"",
+			Globals.BladderAmmo);
 		NGUITools.SetActive(nguiStationArrival, false);
 		NGUITools.SetActive(nguiStationWait, true);
-		//Application.LoadLevel(1);
 	}
 	
 	public void OnClick30()
@@ -130,4 +139,12 @@ public class PlaceDrinks : MonoBehaviour
 		TryATinkle(90);
 	}
 	#endregion Button Events
+}
+
+enum GameResult 
+{
+	Unknown,
+	Win,
+	TinkleShort,
+	Ambulance,
 }

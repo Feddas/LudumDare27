@@ -693,7 +693,7 @@ GameObject:
   - 4: {fileID: 760162256}
   - 114: {fileID: 760162257}
   m_Layer: 8
-  m_Name: Description
+  m_Name: WaitChoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,8 +725,7 @@ MonoBehaviour:
   mPivot: 4
   mDepth: 2
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
-  mText: Once inside, you're asked, "Given how much you've drank. How long do you
-    need to let it go through your system so you pee for exactly 10 seconds?"
+  mText: This text is set by PlaceDrink.cs's OnClickGoIn()
   mMaxLineWidth: 500
   mEncoding: 1
   mMultiline: 1
@@ -1604,7 +1603,7 @@ MonoBehaviour:
   mMat: {fileID: 2100000, guid: e7ef61ebb5c25394c8706a7ea658349f, type: 2}
   mColor: {r: 1, g: 1, b: 1, a: .501960814}
   mPivot: 3
-  mDepth: 1
+  mDepth: 7
   mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
   mSpriteName: Beveled Outline
   mFillCenter: 1
@@ -1656,7 +1655,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d33c6354b54fb847b16b36e1391868d, type: 3}
   m_Name: 
-  mMat: {fileID: 0}
+  mMat: {fileID: 2100000, guid: e7ef61ebb5c25394c8706a7ea658349f, type: 2}
   mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
   mDepth: 1
@@ -1805,7 +1804,7 @@ MonoBehaviour:
   mMat: {fileID: 2100000, guid: e7ef61ebb5c25394c8706a7ea658349f, type: 2}
   mColor: {r: .977611959, g: .965877771, b: .138616621, a: 1}
   mPivot: 3
-  mDepth: 2
+  mDepth: 8
   mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
   mSpriteName: Bright
   mFillCenter: 1
@@ -2546,6 +2545,7 @@ MonoBehaviour:
   nguiStationWait: {fileID: 1270043651}
   DrinkPrefab: {fileID: 100000, guid: b32647c9b31072f499882ea5ae2b0819, type: 2}
   Player: {fileID: 1057562538}
+  WaitChoice: {fileID: 760162257}
   Timer: {fileID: 406372683}
 --- !u!1 &2108272310
 GameObject:
