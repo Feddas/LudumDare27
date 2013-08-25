@@ -19,6 +19,11 @@ public class PlaceDrinks : MonoBehaviour
 	
 	void Start()
 	{
+		if (nguiStationArrival == null)
+		{
+			return;
+		}
+		
 		if (Globals.IsFirstRun)
 		{
 			Time.timeScale = 0; //wait for "Go" click
@@ -36,6 +41,9 @@ public class PlaceDrinks : MonoBehaviour
 	
 	void Update()
 	{
+		if (Timer == null)
+			return;
+		
 		if (Time.timeSinceLevelLoad < 1.5)
 			Timer.text = "10.00";
 		else if (Time.timeSinceLevelLoad > 11.5)

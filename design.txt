@@ -19,12 +19,15 @@ Soda.png - http://openclipart.org/detail/9150/fast-food-drinks-soda-can-by-geral
 WaterBottle.png - http://openclipart.org/detail/168612/sodis-water-disinfection-by-jhnri4
 House - http://openclipart.org/detail/545/small-house-by-gerald_g
 Grass - http://opengameart.org/content/grass-0
+Bathroom - http://openclipart.org/detail/180128/latrine-closed-by-jarda-180128
+BathroomSign - http://openclipart.org/detail/172391/wc-by-maxim2-172391
 
 Soda - http://www.freesound.org/people/samule44/sounds/96026/
 coffee - http://www.freesound.org/people/samule44/sounds/96026/
 water & beer - http://www.freesound.org/people/martinimeniscus/sounds/162894/
 tinkle - http://www.freesound.org/people/Nathan_Lomeli/sounds/79188/
 tinkle win - http://www.freesound.org/people/nicStage/sounds/95087/
+ambulance - http://www.freesound.org/people/LanDub/sounds/184623/
 
 Game Text:
 You're running late to the local radio stations pee holding contest. Luckily they're only a 10 second run away. Chug just the right amount of drinks along the way so that you'll be able to pee for exactly 10 seconds.
