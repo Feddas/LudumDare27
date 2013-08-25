@@ -926,7 +926,8 @@ Prefab:
       propertyPath: Timer
       value: 
       objectReference: {fileID: 144669757}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: e6289e7e764cfd24e954b195475efb15, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e6289e7e764cfd24e954b195475efb15, type: 2}
   m_RootGameObject: {fileID: 446332187}
   m_IsPrefabParent: 0
@@ -1704,8 +1705,8 @@ GameObject:
   - 92: {fileID: 2085605510}
   - 124: {fileID: 2085605509}
   - 81: {fileID: 2085605508}
-  - 114: {fileID: 2085605513}
   - 82: {fileID: 2085605514}
+  - 114: {fileID: 2085605513}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1780,9 +1781,8 @@ Transform:
 --- !u!114 &2085605513
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: e6289e7e764cfd24e954b195475efb15,
-    type: 2}
-  m_PrefabInternal: {fileID: 767345873}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2085605507}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1793,6 +1793,7 @@ MonoBehaviour:
   nguiClose: {fileID: 1117530689}
   Timer: {fileID: 144669757}
   TimeToTinkle: 10
+  Applause: {fileID: 8300000, guid: 2ef7d959d9bf47d4fb28d95aa9165ae7, type: 3}
 --- !u!82 &2085605514
 AudioSource:
   m_ObjectHideFlags: 0

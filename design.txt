@@ -10,8 +10,12 @@ pick how much time to hold it.
 
 If you don't die, see how long you last.
 
-maybe get art from: OpenGameArt.org
-Asset source:
+Cheats:
+if you're at 63% - 69% pick 30 min.
+if you're at 56% - 63% pick 1 hr.
+if you're at 50% - 56% pick 1.5 hr.
+
+source of texture and audio assets:
 Road.png - http://opengameart.org/content/roughworn-road
 Beer.png - http://openclipart.org/detail/1021/foamy-mug-of-beer-by-johnny_automatic
 Coffee.png - http://openclipart.org/detail/155473/cup-of-coffee-by-gr8dan
