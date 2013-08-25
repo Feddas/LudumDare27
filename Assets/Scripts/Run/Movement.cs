@@ -1,24 +1,44 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Component of Road.unity scenes Player gameobject
+/// </summary>
 public class Movement : MonoBehaviour
 {
+	public GameObject nguiStationArrival;
+	public UISlider bladderSlider;
 	public float Responsiveness = 0.3f; //time in seconds before the player can make another move.
+	public AudioClip Water;
+	public AudioClip Soda;
+	public AudioClip Coffee;
 	
-	bool inMiddleOfRoad;
+	bool inMiddleOfRoad, firstUpdate = true;
 	RoadSide currentPosition = new RoadSide(RoadSide.MiddleOfRoad);
 	float distance, //z distance traveled
-		deltaTimeResponded = 0;
+		deltaTimeResponded = 0,
+		bladderMax;
 	Transform cachedTransform;
+//	
+//	void Awake()
+//	{
+//	}
 	
 	void Start()
 	{
+		bladderMax = bladderSlider.foreground.localScale.x;
 		cachedTransform = this.transform;
 		distance = cachedTransform.position.z;
+		Globals.BladderAmmo = 0;
 	}
 	
 	void Update()
 	{
+		if (firstUpdate)
+		{
+			updateSlider(0f);
+			firstUpdate = false;
+		}
 		distance += Time.deltaTime * 10;
 		UpdatePostionZ(cachedTransform, distance);
 		
@@ -45,21 +65,42 @@ public class Movement : MonoBehaviour
 		}
 	}
 	
-	int bladderAmmo = 0;
 	private void OnCollisionEnter(Collision hitInfo)
 	{
 		if (hitInfo.gameObject.tag == "Building")
 		{
 			Debug.Log(hitInfo.gameObject.tag);
 			Time.timeScale = 0;
+			NGUITools.SetActive(nguiStationArrival, true);
 		}
 		else if (hitInfo.gameObject.tag == "Drink")
 		{
 			Drink drank = hitInfo.gameObject.GetComponent<PowerUp>().DrinkType;
-			bladderAmmo += (int)drank;
+			if (drank == Drink.Unknown)
+				return;
+			
+			Globals.BladderAmmo += (int)drank;
 			Destroy(hitInfo.gameObject);
+			
+			updateSlider(Globals.BladderAmmo/100f);
 			//Debug.Log("drank " + drank.ToString() + ". now at " + bladderAmmo);
+			
+			if (drank == Drink.Water || drank == Drink.Beer)
+				audio.clip = Water;
+			else if (drank == Drink.Soda)
+				audio.clip = Soda;
+			else if (drank == Drink.Coffee)
+				audio.clip = Coffee;
+			audio.Play();
 		}
+	}
+	
+	private void updateSlider(float percent)
+	{
+		bladderSlider.foreground.localScale = new Vector3(
+			bladderMax * percent,
+			bladderSlider.foreground.localScale.y,
+			bladderSlider.foreground.localScale.z);
 	}
 	
 	public static void UpdatePostionX(Transform trans, float newX)

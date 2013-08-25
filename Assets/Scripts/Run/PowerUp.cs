@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Component of the prefabs Drink gameobject
+/// </summary>
 public class PowerUp : MonoBehaviour {
 	public Drink DrinkType = Drink.Unknown;
 	public Material Beer;
@@ -32,7 +35,7 @@ public class PowerUp : MonoBehaviour {
 	void Update()
 	{
 		//bounce up and down
-		float newY = y0 + amplitude * Mathf.Sin(SpinSpeed * Time.time);
+		float newY = y0 + amplitude * Mathf.Sin(SpinSpeed * Time.timeSinceLevelLoad);
 		Movement.UpdatePostionY(cachedTransform, newY);
 		
 		//spin
